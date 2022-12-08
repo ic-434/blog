@@ -1,0 +1,25 @@
+{% extends 'main/base.html' %}
+
+
+{% block title %}
+about
+{% endblock %}
+
+{% block url_one %}
+<a href="{% url 'about' %}">about</a>
+{% endblock %}
+
+{% block text %}
+    {% if tasks %}
+        {% for el in tasks%}
+            <div>
+                <h2>{{el.title}}</h2>
+                <p>{{el.task}}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p> нет текста </p>
+    {% endif %}
+{% endblock %}
+
+
